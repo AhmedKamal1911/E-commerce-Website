@@ -45,9 +45,6 @@ font-family: 'Roboto Slab', serif;
 }
 /* End-Global-Rules */
 /* Start-Header */
-header{
- 
-}
 header .container{
   position: relative;
 }
@@ -59,7 +56,12 @@ header .container nav{
   text-align: right;
 }
 header .container nav .burger-icon{
-
+font-size: 25px;
+}
+@media(max-width:767px){
+  header .container nav .burger-icon:hover + ul{
+    display: flex;
+  }
 }
 @media(min-width:768px){
   header .container nav .burger-icon{
@@ -71,12 +73,13 @@ header .container ul{
 }
 @media(max-width:767px){
   header .container ul{
+    display: none;
     width: 100%;
     position: absolute;
     left: 0;
     top: 100%;
     flex-direction: column;
-    background: #50434357;
+    background: #faf9f9ea;
     border-radius: 10px;
     gap: 15px;
     padding-top: 10px;
@@ -108,9 +111,7 @@ header .container ul li a i{
 }
 /* End-Header */
 /* Start-Main-Section */
-main{
 
-}
 main::before{
   position: absolute;
   content: "";
@@ -137,8 +138,18 @@ main .container{
 main .container article p{
   line-height: 2;
 }
+@media(max-width:767px){
+  main .container article{
+    text-align: center;
+  }
+}
 main .container .img img{
   max-width: 100%;
+}
+@media(max-width:767px){
+  main .container .img img{
+    display: none;
+  }
 }
 .explore-btn{
   width: fit-content;
