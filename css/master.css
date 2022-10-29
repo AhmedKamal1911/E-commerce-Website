@@ -43,6 +43,26 @@ font-family: 'Roboto Slab', serif;
     width: 1400px;
   }
 }
+.main-heading{
+  text-align: center;
+  margin-bottom: 80px;
+  }
+  .main-heading h3{
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    padding-bottom: 15px;
+  }
+  .main-heading h3::after{
+    position: absolute;
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 40%;
+    height: 3px;
+    background-color: var(--main-color);
+  }
 /* End-Global-Rules */
 /* Start-Header */
 header .container{
@@ -171,3 +191,145 @@ animation: to-right cubic-bezier(0.65, 0.05, 0.18, 0.58) alternate  1s infinite;
   }
 }
 /* End-Main-Section */
+/* Start-Fashion-Section */
+section.fashion .container .fashion-content{
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+gap: 20px;
+}
+@media(max-width:767px){
+  section.fashion .container .fashion-content{
+    grid-template-columns: minmax(250px,1fr);
+  }
+}
+section.fashion .container .fashion-content .box{
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+section.fashion .container .fashion-content .box:hover{
+  transform: translateY(-15px);
+  box-shadow: 0 15px 15px 1px  rgb(156, 153, 153);
+}
+section.fashion .container .fashion-content .box:hover::before{
+  opacity: 1;
+}
+section.fashion .container .fashion-content .box:hover .desc{
+opacity: 1;
+bottom: 10%;
+}
+section.fashion .container .fashion-content .box:hover .desc h3{
+  transform: translateY(-30px);
+}
+section.fashion .container .fashion-content .box:hover .desc p{
+  transform: translateY(-25px);
+}
+section.fashion .container .fashion-content .box:hover .desc .payment{
+  transform: translateY(-20px);
+}
+section.fashion .container .fashion-content .box::before{
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.479);
+  opacity: 0;
+  transition: 0.2s;
+}
+section.fashion .container .fashion-content .box .img{
+  font-size: 0;
+}
+section.fashion .container .fashion-content .box .img img{
+width: 100%;
+max-width: 100%;
+}
+section.fashion .container .fashion-content .box .desc{
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0%;
+  opacity: 0;
+  transition: var(--main-transition);
+}
+section.fashion .container .fashion-content .box .desc h3{
+font-size: 25px;
+color: var(--main-color);
+transition: 0.3s;
+}
+@media(max-width:767px){
+  section.fashion .container .fashion-content .box .desc h3{
+    font-size: 18px;
+  }
+}
+section.fashion .container .fashion-content .box .desc p{
+line-height: 1.5;
+color: white;
+transition: 0.8s;
+}
+@media(max-width:767px){
+  section.fashion .container .fashion-content .box .desc p{
+    font-size: 15px;
+  }
+}
+section.fashion .container .fashion-content .box .payment{
+justify-content: center;
+gap: 30px;
+transition: 1s;
+}
+section.fashion .container .fashion-content .box .payment i{
+color:var(--main-color);
+cursor: pointer;
+transition: var(--main-transition);
+}
+section.fashion .container .fashion-content .box .payment i:hover{
+  color: rgb(107, 73, 11);
+}
+/* End-Fashion-Section */
+/* Start-products-Feature */
+section.products .container .products-content{
+display: grid;
+grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+gap: 20px;
+}
+@media(max-width:767px){
+  section.products .container .products-content{
+    grid-template-columns: minmax(250px,1fr);
+  }
+}
+section.products .container .products-content .box .img img{
+max-width: 100%;
+}
+section.products .container .products-content .box p{
+  margin: 10px 0;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+section.products .container .products-content .box .stars i{
+color: var(--main-color);
+transition: 0.5s;
+font-size: 19px;
+cursor: pointer;
+}
+section.products .container .products-content .box .stars i:hover{
+  transform: rotate(360deg);
+}
+section.products .container .products-content .box .price i{
+  color: orangered;
+  font-size: 23px;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+section.products .container .products-content .box .price i:hover{
+  transform: scale(1.3);
+}
+section.products .container .products-content .box .price span{
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+/* END-products-Feature */
